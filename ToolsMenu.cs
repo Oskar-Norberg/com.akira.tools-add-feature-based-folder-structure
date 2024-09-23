@@ -32,7 +32,8 @@ namespace akira
         [MenuItem("Tools/Setup/Import Singleton")]
         static void ImportSingleton()
         {
-            string txtPath = Path.Combine(Application.dataPath, "Tools", "Singleton.txt");
+            string packageName = "com.akira.tools";
+            string txtPath = Path.Combine(Application.dataPath, "../Packages", packageName, "Singleton.txt");
             string outputPath = Path.Combine(Application.dataPath, "_Project", "_Scripts", "Utilities", "Singleton.cs");
 
             ImportFile.ImportTextAsScript(txtPath, outputPath);
@@ -40,16 +41,34 @@ namespace akira
         }
 
         [MenuItem("Tools/Setup/Load New Manifest")]
-        static async void LoadNewManifest() =>
+        static async void LoadNewManifest()
+        {
             await Packages.ReplacePackageFromGist("7b3e5fd1f6bd7d18fd23b382765b938b");
+            Debug.Log("Loaded new manifest successfully!");
+        }
 
         [MenuItem("Tools/Setup/Packages/New Input System")]
-        static void AddNewInputSystem() => Packages.InstallUnityPackage("inputsystem");
+        static async void AddNewInputSystem()
+        {
+            bool success = await Packages.InstallUnityPackage("com.unity.inputsystem");
+            if (success)
+                Debug.Log("New Input System package installed successfully.");
+        }
 
         [MenuItem("Tools/Setup/Packages/Post Processing")]
-        static void AddPostProcessing() => Packages.InstallUnityPackage("postprcessing");
+        static async void AddPostProcessing()
+        {
+            bool success = await Packages.InstallUnityPackage("com.unity.postprocessing");
+            if (success)
+                Debug.Log("Post Processing package installed successfully.");
+        }
 
         [MenuItem("Tools/Setup/Packages/Cinemachine")]
-        static void AddCinemachine() => Packages.InstallUnityPackage("cinemachine");
+        static async void AddCinemachine()
+        {
+            bool success = await Packages.InstallUnityPackage("com.unity.cinemachine");
+            if (success)
+                Debug.Log("Cinemachine package installed successfully.");
+        }
     }
 }

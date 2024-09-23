@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 
 namespace akira
@@ -31,10 +32,32 @@ namespace akira
             File.WriteAllText(existing, contents);
             UnityEditor.PackageManager.Client.Resolve();
         }
-
-        public static void InstallUnityPackage(string packageName)
+        public static Task<bool> InstallUnityPackage(string packageName)
         {
-            UnityEditor.PackageManager.Client.Add(packageName);
+            var tcs = new TaskCompletionSource<bool>();
+            UnityEditor.PackageManager.Requests.AddRequest request = UnityEditor.PackageManager.Client.Add(packageName);
+
+            EditorApplication.update += CheckProgress;
+
+            void CheckProgress()
+            {
+                if (request.IsCompleted)
+                {
+                    if (request.Status == UnityEditor.PackageManager.StatusCode.Success)
+                    {
+                        Debug.Log($"Package {packageName} installed successfully.");
+                        tcs.SetResult(true);
+                    }
+                    else
+                    {
+                        Debug.LogError($"Failed to install package {packageName}. Error: {request.Error.message}");
+                        tcs.SetResult(false);
+                    }
+                    EditorApplication.update -= CheckProgress;
+                }
+            }
+
+            return tcs.Task;
         }
     }
 }
