@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 using static UnityEditor.AssetDatabase;
+using System.IO;
 
 namespace akira
 {
@@ -9,8 +10,33 @@ namespace akira
         [MenuItem("Tools/Setup/Create Default Folders")]
         public static void CreateDefaultFolders()
         {
-            Folders.CreateDirectories("_Project", "_Scrips", "Audio", "Prefabs", "Resources", "Scenes");
+            Folders.CreateDirectories("_Project",
+                "_Scripts>Controllers",
+                "_Scripts>Editor",
+                "_Scripts>Managers",
+                "_Scripts>Scriptables",
+                "_Scripts>Spawners",
+                "_Scripts>Systems",
+                "_Scripts>Units",
+                "_Scripts>Utilities",
+                "Audio>Music",
+                "Prefabs>Props",
+                "Prefabs>UI Prefabs",
+                "Resources>Fonts",
+                "Resources>Materials",
+                "Scenes"
+            );
             Refresh();
+        }
+
+        [MenuItem("Tools/Setup/Import Singleton")]
+        static void ImportSingleton()
+        {
+            string txtPath = Path.Combine(Application.dataPath, "Tools", "Singleton.txt");
+            string outputPath = Path.Combine(Application.dataPath, "_Project", "_Scripts", "Utilities", "Singleton.cs");
+
+            ImportFile.ImportTextAsScript(txtPath, outputPath);
+            Debug.Log("Singleton imported successfully!");
         }
 
         [MenuItem("Tools/Setup/Load New Manifest")]

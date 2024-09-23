@@ -5,12 +5,13 @@ namespace akira
 {
     public static class Folders
     {
-        public static void CreateDirectories(string root, params string[] dir)
+        public static void CreateDirectories(string root, params string[] dirs)
         {
             var fullPath = Path.Combine(Application.dataPath, root);
-            foreach (var newDirectory in dir)
+            foreach (var dir in dirs)
             {
-                Directory.CreateDirectory(Path.Combine(fullPath, newDirectory));
+                var path = Path.Combine(fullPath, dir.Replace('>', Path.DirectorySeparatorChar));
+                Directory.CreateDirectory(path);
             }
         }
     }

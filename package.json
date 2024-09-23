@@ -1,5 +1,23 @@
 {
     "name": "com.akira.tools",
-    "version": "0.0.1-preview.2",
-    "displayName": "Akira's Tools"
+    "version": "0.0.2-preview.1",
+    "displayName": "Akira's Tools",
+    "changelog": [
+        {
+            "version": "0.0.2-preview.1",
+            "changes": [
+                "Added ImportFile functionality",
+                "Added Singleton import feature",
+                "Improved folder creation with nested structure"
+            ]
+        },
+        {
+            "version": "0.0.1",
+            "changes": [
+                "Initial release",
+                "Basic folder creation",
+                "Package management features"
+            ]
+        }
+    ]
 }
