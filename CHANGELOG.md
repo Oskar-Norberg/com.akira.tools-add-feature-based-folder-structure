@@ -2,6 +2,12 @@
 
 All notable changes to this package will be documented in this file.
 
+## [0.0.4-preview.1] - 2023-12-02
+
+### Changed
+- Import singleton now prompts for namespace name
+- Changed some of the default folders
+
 ## [0.0.3-preview.1] - 2023-09-23
 
 ### Added

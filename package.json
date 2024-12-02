@@ -1,12 +1,12 @@
 {
     "name": "com.akira.tools",
-    "version": "0.0.3-preview.1",
+    "version": "0.0.4-preview.1",
     "displayName": "Akira's Tools",
     "description": "A collection of useful tools for Unity development",
-    "unity": "2022.3",
+    "unity": "6000.23f1",
     "author": {
         "name": "Akira",
-        "email": "akira@example.com",
+        "email": "akivonakira@gmail.com",
         "url": "https://github.com/AkiVonAkira"
     },
     "dependencies": {},

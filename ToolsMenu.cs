@@ -17,13 +17,17 @@ namespace akira
                 "_Scripts>Scriptables",
                 "_Scripts>Spawners",
                 "_Scripts>Systems",
+                "_Scripts>UI",
                 "_Scripts>Units",
                 "_Scripts>Utilities",
+                "Animations",
                 "Audio>Music",
+                "Materials",
                 "Prefabs>Props",
                 "Prefabs>UI Prefabs",
                 "Resources>Fonts",
-                "Resources>Materials",
+                "Resources>Shaders",
+                "Sprites>UI",
                 "Scenes"
             );
             Refresh();
@@ -32,11 +36,17 @@ namespace akira
         [MenuItem("Tools/Setup/Import Singleton")]
         static void ImportSingleton()
         {
+            string defaultNamespace = "akira";
             string packageName = "com.akira.tools";
             string txtPath = Path.Combine(Application.dataPath, "../Packages", packageName, "Singleton.txt");
             string outputPath = Path.Combine(Application.dataPath, "_Project", "_Scripts", "Utilities", "Singleton.cs");
 
-            ImportFile.ImportTextAsScript(txtPath, outputPath);
+            // Prompt the user to enter a namespace
+            string nameSpace = EditorUtility.DisplayDialogComplex("Namespace Input", "Enter the namespace for the Singleton script:", "OK", "Cancel", "") == 0
+                ? EditorUtility.DisplayDialog("Namespace Input", "Enter the namespace for the Singleton script:", defaultNamespace)
+                : defaultNamespace;
+
+            ImportFile.ImportTextAsScript(txtPath, outputPath, nameSpace);
             Debug.Log("Singleton imported successfully!");
         }
 
