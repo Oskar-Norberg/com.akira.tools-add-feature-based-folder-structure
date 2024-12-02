@@ -3,7 +3,7 @@
     "version": "0.0.4-preview.1",
     "displayName": "Akira's Tools",
     "description": "A collection of useful tools for Unity development",
-    "unity": "6000.23f1",
+    "unity": "6000.0",
     "author": {
         "name": "Akira",
         "email": "akivonakira@gmail.com",
