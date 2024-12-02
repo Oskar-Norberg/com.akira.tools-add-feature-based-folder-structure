@@ -2,6 +2,12 @@
 
 All notable changes to this package will be documented in this file.
 
+## [0.0.5-preview.1] - 2023-12-02
+
+### Changed
+- Fixed issue with ImportFile not working correctly
+- Changed Folder Structure
+
 ## [0.0.4-preview.1] - 2023-12-02
 
 ### Changed
