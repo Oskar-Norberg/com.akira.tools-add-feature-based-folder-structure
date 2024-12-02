@@ -40,7 +40,7 @@ public class NamespaceInputPopup : EditorWindow
     private void ImportSingletonScript(string nameSpace)
     {
         string packageName = "com.akira.tools";
-        string txtPath = Path.Combine(Application.dataPath, "../Packages/Scripts", packageName, "Singleton.txt");
+        string txtPath = Path.Combine(Application.dataPath, "../Packages", packageName, "Scripts/Singleton.txt");
         string outputPath = Path.Combine(Application.dataPath, "_Project", "_Scripts", "Utilities", "Singleton.cs");
 
         ImportFile.ImportTextAsScript(txtPath, outputPath, nameSpace);
