@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
 
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v4
+        uses: cycjimmy/semantic-release-action@v4.1.1
         with:
           branches: |
             [
@@ -24,5 +24,5 @@ jobs:
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/git
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
