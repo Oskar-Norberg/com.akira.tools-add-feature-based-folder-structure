@@ -30,6 +30,7 @@ namespace akira
                 "Materials>Shaders",
                 "Models>FBX",
                 "Prefabs>Enemies",
+                "Prefabs>Player",
                 "Prefabs>Props",
                 "Prefabs>UI Prefabs",
                 "Prefabs>VFX",
