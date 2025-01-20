@@ -16,21 +16,28 @@ namespace akira
                 "_Scripts>Controllers",
                 "_Scripts>Editor",
                 "_Scripts>Managers",
+                "_Scripts>Objects",
                 "_Scripts>Scriptables",
                 "_Scripts>Spawners",
+                "_Scripts>States",
                 "_Scripts>Systems",
                 "_Scripts>UI",
                 "_Scripts>Units",
                 "_Scripts>Utilities",
                 "Animations",
                 "Audio>Music",
-                "Materials",
+                "Editor>Icons",
+                "Materials>Shaders",
+                "Models>FBX",
+                "Prefabs>Enemies",
                 "Prefabs>Props",
                 "Prefabs>UI Prefabs",
+                "Prefabs>VFX",
                 "Resources>Fonts",
+                "Resources>Scriptable Objects",
                 "Resources>Shaders",
-                "Sprites>UI",
-                "Scenes"
+                "Scenes",
+                "Sprites>UI"
             );
             Refresh();
         }
