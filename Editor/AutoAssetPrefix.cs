@@ -42,7 +42,8 @@ namespace akira
             string[] importedAssets,
             string[] deletedAssets,
             string[] movedAssets,
-            string[] movedFromAssetPaths
+            string[] movedFromAssetPaths,
+            string[] movedToAssetPaths
         )
         {
             foreach (string str in importedAssets)

@@ -1,9 +1,10 @@
+using System.IO;
+using UnityEngine;
+using static UnityEditor.AssetDatabase;
 # if UNITY_EDITOR
 using UnityEditor;
 # endif
-using UnityEngine;
-using static UnityEditor.AssetDatabase;
-using System.IO;
+
 
 namespace akira
 {
@@ -12,7 +13,8 @@ namespace akira
         [MenuItem("Tools/Setup/Create Default Folders")]
         public static void CreateDefaultFolders()
         {
-            Folders.CreateDirectories("_Project",
+            Folders.CreateDirectories(
+                "_Project",
                 "_Scripts>Controllers",
                 "_Scripts>Editor",
                 "_Scripts>Managers",
