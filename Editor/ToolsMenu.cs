@@ -5,7 +5,6 @@ using static UnityEditor.AssetDatabase;
 using UnityEditor;
 # endif
 
-
 namespace akira
 {
     public static class ToolsMenu
@@ -17,6 +16,7 @@ namespace akira
                 "_Project",
                 "_Scripts>Controllers",
                 "_Scripts>Editor",
+                "_Scripts>Interfaces",
                 "_Scripts>Managers",
                 "_Scripts>Objects",
                 "_Scripts>Scriptables",
@@ -30,6 +30,7 @@ namespace akira
                 "Audio>Music",
                 "Editor>Icons",
                 "Materials>Shaders",
+                "Materials>Terrain",
                 "Models>FBX",
                 "Prefabs>Enemies",
                 "Prefabs>Player",
@@ -39,7 +40,8 @@ namespace akira
                 "Resources>Fonts",
                 "Resources>Scriptable Objects",
                 "Resources>Shaders",
-                "Scenes",
+                "Scenes>Templates",
+                "Scenes>Temporary Scenes",
                 "Sprites>UI"
             );
             Refresh();
