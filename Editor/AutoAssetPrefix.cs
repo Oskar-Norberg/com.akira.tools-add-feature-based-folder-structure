@@ -50,13 +50,15 @@ namespace akira
             { typeof(AudioClip), "SFX" },
             { typeof(Shader), "SHADER" },
             { typeof(ScriptableObject), "SO" },
+            { typeof(TerrainData), "TD" },
         };
 
         static void OnPostprocessAllAssets(
             string[] importedAssets,
             string[] deletedAssets,
             string[] movedAssets,
-            string[] movedFromAssetPaths)
+            string[] movedFromAssetPaths
+        )
         {
             foreach (string assetPath in importedAssets)
             {
@@ -75,7 +77,8 @@ namespace akira
                     AssetDatabase.Refresh();
 
                     // Update the main object name to match the new filename
-                    string newAssetPath = $"{string.Join("/", splitFilePath.Take(splitFilePath.Length - 1))}/{newName}";
+                    string newAssetPath =
+                        $"{string.Join("/", splitFilePath.Take(splitFilePath.Length - 1))}/{newName}";
                     Object asset = AssetDatabase.LoadAssetAtPath<Object>(newAssetPath);
                     if (asset != null)
                     {
@@ -100,7 +103,11 @@ namespace akira
             return null;
         }
 
-        private static string GetNewName(string fileNameWithoutExtension, string fileExtension, Type assetType)
+        private static string GetNewName(
+            string fileNameWithoutExtension,
+            string fileExtension,
+            Type assetType
+        )
         {
             foreach (PrefixFileTypePair ptp in PrefixInfo)
             {
