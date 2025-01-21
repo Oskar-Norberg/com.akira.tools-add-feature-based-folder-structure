@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.1...v1.3.2) (2025-01-21)
+
+
+### Bug Fixes
+
+* add more folders ([376e34b](https://github.com/AkiVonAkira/com.akira.tools/commit/376e34b92401fca55b8e3f8aa229fd60e3beacba))
+
 ## [1.3.1](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.0...v1.3.1) (2025-01-21)
 
 
