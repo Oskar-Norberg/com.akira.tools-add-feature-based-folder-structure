@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.0...v1.3.1) (2025-01-21)
+
+
+### Bug Fixes
+
+* add terraindata ([b31d41a](https://github.com/AkiVonAkira/com.akira.tools/commit/b31d41ab29140c6a0ad38a9e5423dd34240dfe9c))
+
 # [1.3.0](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.2.2...v1.3.0) (2025-01-21)
 
 
