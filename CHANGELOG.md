@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.0.1...v1.1.0) (2025-01-21)
+
+
+### Features
+
+* add more asset types and test asset type detection ([e14d6ab](https://github.com/AkiVonAkira/com.akira.tools/commit/e14d6ab9ace3907e7882955553448b6d8ce3c1a7))
+
 ## [1.0.1](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.0.0...v1.0.1) (2025-01-21)
 
 
