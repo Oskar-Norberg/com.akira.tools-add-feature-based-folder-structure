@@ -1,42 +1,37 @@
 # 1.0.0 (2025-01-20)
 
-
 ### Bug Fixes
 
-* aaaaaa ([69e54ba](https://github.com/AkiVonAkira/com.akira.tools/commit/69e54ba1a7e8173deedc56f82ba4e901a8dd9987))
-* add action yml ([d0f8880](https://github.com/AkiVonAkira/com.akira.tools/commit/d0f8880f94be0a945c7ba09c73634cc81403ae3a))
-* add index.js ([74f8559](https://github.com/AkiVonAkira/com.akira.tools/commit/74f855957d7f68c337afa8db897c1694e9c66e7e))
-* bruh ([7f396d9](https://github.com/AkiVonAkira/com.akira.tools/commit/7f396d9970536fab3bfcc2d1985e9e925e3427e9))
-* change ver ([fea894e](https://github.com/AkiVonAkira/com.akira.tools/commit/fea894e2fdbbf8d20d8ac6a62a67392681e4de50))
-* changelog wrong date ([9db5b9c](https://github.com/AkiVonAkira/com.akira.tools/commit/9db5b9cb72d1acb916b0a0b2e4f07b95109629c7))
-* jimmy PLEASE ([b8a6eaf](https://github.com/AkiVonAkira/com.akira.tools/commit/b8a6eaf3d6831db9581e182259491dee064fd29c))
-* please ([69fa3b5](https://github.com/AkiVonAkira/com.akira.tools/commit/69fa3b517fc6684cb4bdf644ece890ea3fd17f0c))
-* raaaaaaaaaa ([7ef26b9](https://github.com/AkiVonAkira/com.akira.tools/commit/7ef26b954a865e33483ddccf41caa02eaafcca1b))
-* test ([a000dc8](https://github.com/AkiVonAkira/com.akira.tools/commit/a000dc88754be393914863e56033c37b7b6b389e))
-* test 2 ([5ed1434](https://github.com/AkiVonAkira/com.akira.tools/commit/5ed1434cb818dd59e365eed24301469af05622a5))
-* update semantic release ([08aab0f](https://github.com/AkiVonAkira/com.akira.tools/commit/08aab0f24ccb3f2b4e70270e6d0efb4fa0889682))
-* workflow branch ([6753b68](https://github.com/AkiVonAkira/com.akira.tools/commit/6753b687a802ecd349b0d40b7c791617dd9c296a))
-* yeahhaaaa ([d7d6897](https://github.com/AkiVonAkira/com.akira.tools/commit/d7d689781d2f8eef8cc1ee1312e18d9f3e806728))
+- aaaaaa ([69e54ba](https://github.com/AkiVonAkira/com.akira.tools/commit/69e54ba1a7e8173deedc56f82ba4e901a8dd9987))
+- add action yml ([d0f8880](https://github.com/AkiVonAkira/com.akira.tools/commit/d0f8880f94be0a945c7ba09c73634cc81403ae3a))
+- add index.js ([74f8559](https://github.com/AkiVonAkira/com.akira.tools/commit/74f855957d7f68c337afa8db897c1694e9c66e7e))
+- bruh ([7f396d9](https://github.com/AkiVonAkira/com.akira.tools/commit/7f396d9970536fab3bfcc2d1985e9e925e3427e9))
+- change ver ([fea894e](https://github.com/AkiVonAkira/com.akira.tools/commit/fea894e2fdbbf8d20d8ac6a62a67392681e4de50))
+- changelog wrong date ([9db5b9c](https://github.com/AkiVonAkira/com.akira.tools/commit/9db5b9cb72d1acb916b0a0b2e4f07b95109629c7))
+- jimmy PLEASE ([b8a6eaf](https://github.com/AkiVonAkira/com.akira.tools/commit/b8a6eaf3d6831db9581e182259491dee064fd29c))
+- please ([69fa3b5](https://github.com/AkiVonAkira/com.akira.tools/commit/69fa3b517fc6684cb4bdf644ece890ea3fd17f0c))
+- raaaaaaaaaa ([7ef26b9](https://github.com/AkiVonAkira/com.akira.tools/commit/7ef26b954a865e33483ddccf41caa02eaafcca1b))
+- test ([a000dc8](https://github.com/AkiVonAkira/com.akira.tools/commit/a000dc88754be393914863e56033c37b7b6b389e))
+- test 2 ([5ed1434](https://github.com/AkiVonAkira/com.akira.tools/commit/5ed1434cb818dd59e365eed24301469af05622a5))
+- update semantic release ([08aab0f](https://github.com/AkiVonAkira/com.akira.tools/commit/08aab0f24ccb3f2b4e70270e6d0efb4fa0889682))
+- workflow branch ([6753b68](https://github.com/AkiVonAkira/com.akira.tools/commit/6753b687a802ecd349b0d40b7c791617dd9c296a))
+- yeahhaaaa ([d7d6897](https://github.com/AkiVonAkira/com.akira.tools/commit/d7d689781d2f8eef8cc1ee1312e18d9f3e806728))
 
-# Changelog
-
-All notable changes to this package will be documented in this file.
-
-## [0.0.5-preview.1] - 2024-12-02
+# 0.0.5-preview.1 (2024-12-02)
 
 ### Changed
 
 - Fixed issue with ImportFile not working correctly
 - Changed Folder Structure
 
-## [0.0.4-preview.1] - 2024-12-02
+# 0.0.4-preview.1 (2024-12-02)
 
 ### Changed
 
 - Import singleton now prompts for namespace name
 - Changed some of the default folders
 
-## [0.0.3-preview.1] - 2024-09-23
+# 0.0.3-preview.1 (2024-09-23)
 
 ### Added
 
@@ -46,7 +41,7 @@ All notable changes to this package will be documented in this file.
 
 - Updated ImportFile to use Unity project namespace
 
-## [0.0.2-preview.1] - 2024-09-23
+# 0.0.2-preview.1 (2024-09-23)
 
 ### Added
 
@@ -57,7 +52,7 @@ All notable changes to this package will be documented in this file.
 
 - Improved folder creation with nested structure
 
-## [0.0.1] - 2024-09-14
+# 0.0.1 (2024-09-14)
 
 ### Added
 
