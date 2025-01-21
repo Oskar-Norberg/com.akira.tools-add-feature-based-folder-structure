@@ -1,19 +1,19 @@
 {
-    "name": "com.akira.tools",
-    "version": "1.1.1",
-    "displayName": "Akira's Tools",
-    "description": "A collection of useful tools for Unity development",
-    "unity": "6000.0",
-    "changelogUrl": "https://github.com/AkiVonAkira/UnityPackageTools/blob/main/CHANGELOG.md",
-    "author": {
-        "name": "Akira",
-        "email": "akivonakira@gmail.com",
-        "url": "https://github.com/AkiVonAkira"
-    },
-    "dependencies": {},
-    "keywords": [
-        "tools",
-        "utility",
-        "editor"
-    ]
+  "name": "com.akira.tools",
+  "version": "1.1.1",
+  "displayName": "Akira's Tools",
+  "description": "A collection of useful tools for Unity development",
+  "unity": "6000.0",
+  "changelogUrl": "https://github.com/AkiVonAkira/UnityPackageTools/blob/main/CHANGELOG.md",
+  "author": {
+    "name": "Akira",
+    "email": "akivonakira@gmail.com",
+    "url": "https://github.com/AkiVonAkira"
+  },
+  "dependencies": {},
+  "keywords": [
+    "tools",
+    "utility",
+    "editor"
+  ]
 }

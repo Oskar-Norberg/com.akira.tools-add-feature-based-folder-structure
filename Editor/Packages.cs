@@ -32,10 +32,12 @@ namespace akira
             File.WriteAllText(existing, contents);
             UnityEditor.PackageManager.Client.Resolve();
         }
+
         public static Task<bool> InstallUnityPackage(string packageName)
         {
             var tcs = new TaskCompletionSource<bool>();
-            UnityEditor.PackageManager.Requests.AddRequest request = UnityEditor.PackageManager.Client.Add(packageName);
+            UnityEditor.PackageManager.Requests.AddRequest request =
+                UnityEditor.PackageManager.Client.Add(packageName);
 
             EditorApplication.update += CheckProgress;
 
@@ -50,7 +52,9 @@ namespace akira
                     }
                     else
                     {
-                        Debug.LogError($"Failed to install package {packageName}. Error: {request.Error.message}");
+                        Debug.LogError(
+                            $"Failed to install package {packageName}. Error: {request.Error.message}"
+                        );
                         tcs.SetResult(false);
                     }
                     EditorApplication.update -= CheckProgress;

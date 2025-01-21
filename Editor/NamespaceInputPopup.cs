@@ -1,10 +1,10 @@
 using System.IO;
 using akira;
 using UnityEngine;
+using UnityEngine.UIElements;
 # if UNITY_EDITOR
 using UnityEditor;
 # endif
-using UnityEngine.UIElements;
 
 public class NamespaceInputPopup : EditorWindow
 {
@@ -30,7 +30,8 @@ public class NamespaceInputPopup : EditorWindow
 
         var button = new Button();
         button.text = "OK";
-        button.clicked += () => {
+        button.clicked += () =>
+        {
             ImportSingletonScript(namespaceInput);
             this.Close();
         };
@@ -40,8 +41,19 @@ public class NamespaceInputPopup : EditorWindow
     private void ImportSingletonScript(string nameSpace)
     {
         string packageName = "com.akira.tools";
-        string txtPath = Path.Combine(Application.dataPath, "../Packages", packageName, "Scripts/Singleton.txt");
-        string outputPath = Path.Combine(Application.dataPath, "_Project", "_Scripts", "Utilities", "Singleton.cs");
+        string txtPath = Path.Combine(
+            Application.dataPath,
+            "../Packages",
+            packageName,
+            "Scripts/Singleton.txt"
+        );
+        string outputPath = Path.Combine(
+            Application.dataPath,
+            "_Project",
+            "_Scripts",
+            "Utilities",
+            "Singleton.cs"
+        );
 
         ImportFile.ImportTextAsScript(txtPath, outputPath, nameSpace);
         Debug.Log("Singleton imported successfully!");
