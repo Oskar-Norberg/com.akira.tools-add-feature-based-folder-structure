@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.1.0...v1.2.0) (2025-01-21)
+
+
+### Features
+
+* rename .asset files based on type ([5e14000](https://github.com/AkiVonAkira/com.akira.tools/commit/5e14000d7e5e96d69c4149c7e348d12d61d3fd3e))
+
 # [1.1.0](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.0.1...v1.1.0) (2025-01-21)
 
 
