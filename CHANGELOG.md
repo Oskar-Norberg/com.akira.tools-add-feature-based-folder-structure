@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.2.2...v1.3.0) (2025-01-21)
+
+
+### Features
+
+* refactor and combine both prefixers in one class ([d506d12](https://github.com/AkiVonAkira/com.akira.tools/commit/d506d12138ec10ce1d1bfe3c9eb6fd2f0b66f55a))
+
 ## [1.2.2](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.2.1...v1.2.2) (2025-01-21)
 
 
