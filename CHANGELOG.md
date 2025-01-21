@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.0.0...v1.0.1) (2025-01-21)
+
+
+### Bug Fixes
+
+* change old changelog format ([d4d14ed](https://github.com/AkiVonAkira/com.akira.tools/commit/d4d14ed10ed1f05998a8cbd263f757cd3824b030))
+
 # 1.0.0 (2025-01-20)
 
 ### Bug Fixes
