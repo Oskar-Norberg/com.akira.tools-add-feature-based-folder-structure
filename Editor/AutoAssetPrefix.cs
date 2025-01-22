@@ -51,7 +51,6 @@ namespace akira
             { typeof(Shader), "SHADER" },
             { typeof(ScriptableObject), "SO" },
             { typeof(TerrainData), "TD" },
-            { typeof(ShaderGraph.SubGraphAsset), "SHADERSG" },
         };
 
         static void OnPostprocessAllAssets(
