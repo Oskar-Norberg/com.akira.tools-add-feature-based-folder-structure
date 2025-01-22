@@ -1,3 +1,10 @@
+## [1.3.6](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.5...v1.3.6) (2025-01-22)
+
+
+### Bug Fixes
+
+* remove subgraph ([90562e0](https://github.com/AkiVonAkira/com.akira.tools/commit/90562e06478a8d5143c8b0a7d62179556aa7d48d))
+
 ## [1.3.5](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.4...v1.3.5) (2025-01-22)
 
 
