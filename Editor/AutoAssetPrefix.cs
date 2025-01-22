@@ -63,6 +63,11 @@ namespace akira
         {
             foreach (string assetPath in importedAssets)
             {
+                if (!assetPath.StartsWith("Assets/_Project"))
+                {
+                    continue;
+                }
+
                 Type assetType = GetAssetType(assetPath);
                 //Debug.Log($"Imported asset: {assetPath}, Type: {assetType}");
 
