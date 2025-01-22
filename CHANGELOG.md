@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.3...v1.3.4) (2025-01-22)
+
+
+### Bug Fixes
+
+* only modify assets in _project folder ([d4924cb](https://github.com/AkiVonAkira/com.akira.tools/commit/d4924cb01970d829daa0feda79f5b370e1306d83))
+
 ## [1.3.3](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.2...v1.3.3) (2025-01-21)
 
 
