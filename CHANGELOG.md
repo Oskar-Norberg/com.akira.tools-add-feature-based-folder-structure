@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.4...v1.3.5) (2025-01-22)
+
+
+### Bug Fixes
+
+* subgraph type ([fc8ccab](https://github.com/AkiVonAkira/com.akira.tools/commit/fc8ccab97aa81a8df86a1d62e617d84fa8a5c8ee))
+
 ## [1.3.4](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.3...v1.3.4) (2025-01-22)
 
 
