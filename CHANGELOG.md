@@ -1,3 +1,11 @@
+## [1.3.7](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.6...v1.3.7) (2025-01-24)
+
+
+### Bug Fixes
+
+* add if check for unity editor to enable builds ([afb2080](https://github.com/AkiVonAkira/com.akira.tools/commit/afb208079f41d7b62a3c681e97994fe75c8e2588))
+* improve singleton script with debug log error if null ([1157adf](https://github.com/AkiVonAkira/com.akira.tools/commit/1157adf8fc00d892f80f2efa3f97773cffb6c960))
+
 ## [1.3.6](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.5...v1.3.6) (2025-01-22)
 
 
