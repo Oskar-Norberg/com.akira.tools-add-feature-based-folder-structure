@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.4.0...v1.4.1) (2025-01-27)
+
+
+### Bug Fixes
+
+* refactor auto asset prefix ([16a8431](https://github.com/AkiVonAkira/com.akira.tools/commit/16a8431425b14d7bf41589d90aa4794781df718c))
+
 # [1.4.0](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.9...v1.4.0) (2025-01-27)
 
 
