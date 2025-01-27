@@ -42,7 +42,10 @@ public class HiddenGameObjectTools : EditorWindow
         GUILayout.EndHorizontal();
         GUILayout.Space(10f);
 
-        EditorGUILayout.LabelField("Hidden Objects (" + HiddenObjects.Count + ")", EditorStyles.boldLabel);
+        EditorGUILayout.LabelField(
+            $"Hidden Objects ({HiddenObjects.Count})",
+            EditorStyles.boldLabel
+        );
         for (int i = 0; i < HiddenObjects.Count; i++)
         {
             var hiddenObject = HiddenObjects[i];

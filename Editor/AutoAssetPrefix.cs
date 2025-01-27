@@ -142,7 +142,9 @@ namespace akira
             }
 
             LogErrorOnce($"Unknown file type: {fileExtension}");
-            LogErrorOnce($"Unknown asset type for file: {fileNameWithoutExtension}.{fileExtension}");
+            LogErrorOnce(
+                $"Unknown asset type for file: {fileNameWithoutExtension}.{fileExtension}"
+            );
             return null;
         }
 
