@@ -1,3 +1,10 @@
+## [1.3.8](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.7...v1.3.8) (2025-01-27)
+
+
+### Bug Fixes
+
+* move #if unity editor to wrap the whole files ([4b3116c](https://github.com/AkiVonAkira/com.akira.tools/commit/4b3116cf9f038b9b5ca73716bf53d5ec20039b28))
+
 ## [1.3.7](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.6...v1.3.7) (2025-01-24)
 
 
