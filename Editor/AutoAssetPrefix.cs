@@ -132,7 +132,6 @@ namespace akira
                         return null;
                     return $"{ptp.Prefix}_{fileNameWithoutExtension}.{fileExtension}";
                 }
-                LogErrorOnce($"Unknown file type: {fileExtension}");
             }
 
             if (TypePrefixMap.TryGetValue(assetType, out var prefix))
@@ -141,9 +140,9 @@ namespace akira
                     return null;
                 return $"{prefix}_{fileNameWithoutExtension}.{fileExtension}";
             }
-            LogErrorOnce(
-                $"Unknown asset type for file: {fileNameWithoutExtension}.{fileExtension}"
-            );
+
+            LogErrorOnce($"Unknown file type: {fileExtension}");
+            LogErrorOnce($"Unknown asset type for file: {fileNameWithoutExtension}.{fileExtension}");
             return null;
         }
 
