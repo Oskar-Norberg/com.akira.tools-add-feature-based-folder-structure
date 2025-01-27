@@ -32,6 +32,7 @@ public class HiddenGameObjectTools : EditorWindow
             {
                 GatherHiddenObjects();
             }
+
             if (GUILayout.Button("Test", BigButtonHeight, ButtonWidth))
             {
                 var go = new GameObject("HiddenTestObject");
@@ -92,12 +93,12 @@ public class HiddenGameObjectTools : EditorWindow
 
     #region Hidden Objects
 
-    private List<GameObject> HiddenObjects = new List<GameObject>();
+    private List<GameObject> HiddenObjects = new();
 
     private void GatherHiddenObjects()
     {
         HiddenObjects.Clear();
-        var allObjects = FindObjectsOfType<GameObject>();
+        var allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
         foreach (var go in allObjects)
         {
             if ((go.hideFlags & HideFlags.HideInHierarchy) != 0)
@@ -105,6 +106,7 @@ public class HiddenGameObjectTools : EditorWindow
                 HiddenObjects.Add(go);
             }
         }
+
         Repaint();
     }
 

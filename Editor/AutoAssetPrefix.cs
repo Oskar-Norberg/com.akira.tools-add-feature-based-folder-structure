@@ -115,15 +115,15 @@ namespace akira
 
         private static string GetNewName(string fileNameWithoutExtension, string fileExtension, Type assetType)
         {
-            foreach (var pair in AssetTypePairs)
-            {
-                if (pair.AssetType != assetType) continue;
-                return fileNameWithoutExtension.Split('_').First() == pair.Prefix ? null : $"{pair.Prefix}_{fileNameWithoutExtension}.{fileExtension}";
-            }
-
             foreach (var pair in FileTypePairs)
             {
                 if (pair.FileType != fileExtension) continue;
+                return fileNameWithoutExtension.Split('_').First() == pair.Prefix ? null : $"{pair.Prefix}_{fileNameWithoutExtension}.{fileExtension}";
+            }
+
+            foreach (var pair in AssetTypePairs)
+            {
+                if (pair.AssetType != assetType) continue;
                 return fileNameWithoutExtension.Split('_').First() == pair.Prefix ? null : $"{pair.Prefix}_{fileNameWithoutExtension}.{fileExtension}";
             }
 
