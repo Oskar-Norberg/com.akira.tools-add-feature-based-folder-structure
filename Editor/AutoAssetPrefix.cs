@@ -10,19 +10,9 @@ namespace akira
 {
     public class AutoAssetPrefix : AssetPostprocessor
     {
-        struct PrefixFileTypePair
-        {
-            public readonly string FileType;
-            public readonly string Prefix;
+        #region Prefix Definitions
 
-            public PrefixFileTypePair(string pFileType, string pPrefix)
-            {
-                FileType = pFileType;
-                Prefix = pPrefix;
-            }
-        }
-
-        private static readonly PrefixFileTypePair[] PrefixInfo =
+        private static readonly PrefixFileTypePair[] FileTypePairs =
         {
             new("mat", "M"),
             new("anim", "AC"),
@@ -39,20 +29,21 @@ namespace akira
             new("scenetemplate", "SCENE"),
         };
 
-        private static readonly Dictionary<Type, string> TypePrefixMap = new()
+        private static readonly PrefixAssetTypePair[] AssetTypePairs =
         {
-            { typeof(Material), "M" },
-            { typeof(AnimationClip), "AC" },
-            { typeof(GameObject), "FBX" },
-            { typeof(Texture2D), "SPR" },
-            { typeof(RuntimeAnimatorController), "CTRL" },
-            { typeof(TerrainLayer), "TL" },
-            { typeof(SceneAsset), "SCENE" },
-            { typeof(AudioClip), "SFX" },
-            { typeof(Shader), "SHADER" },
-            { typeof(ScriptableObject), "SO" },
-            { typeof(TerrainData), "TD" },
+            new(typeof(Material), "M"),
+            new(typeof(AnimationClip), "AC"),
+            new(typeof(GameObject), "FBX"),
+            new(typeof(Texture2D), "SPR"),
+            new(typeof(RuntimeAnimatorController), "CTRL"),
+            new(typeof(TerrainLayer), "TL"),
+            new(typeof(SceneAsset), "SCENE"),
+            new(typeof(AudioClip), "SFX"),
+            new(typeof(Shader), "SHADER"),
+            new(typeof(ScriptableObject), "SO"),
+            new(typeof(TerrainData), "TD"),
         };
+        #endregion
 
         private static readonly HashSet<string> LoggedErrors = new();
 
@@ -77,7 +68,11 @@ namespace akira
                 }
 
                 Type assetType = GetAssetType(assetPath);
-                //Debug.Log($"Imported asset: {assetPath}, Type: {assetType}");
+                if (assetType == null)
+                {
+                    LogErrorOnce($"Failed to determine asset type for path: {assetPath}");
+                    continue;
+                }
 
                 string[] splitFilePath = assetPath.Split('/');
                 string[] splitFileName = splitFilePath.Last().Split('.');
@@ -112,39 +107,39 @@ namespace akira
                 {
                     return typeof(ScriptableObject);
                 }
+
                 return asset.GetType();
             }
+
             LogErrorOnce($"Failed to load asset at path: {assetPath}");
             return null;
         }
 
-        private static string GetNewName(
-            string fileNameWithoutExtension,
-            string fileExtension,
-            Type assetType
-        )
+        private static string GetNewName(string fileNameWithoutExtension, string fileExtension, Type assetType)
         {
-            foreach (PrefixFileTypePair ptp in PrefixInfo)
+            foreach (var pair in AssetTypePairs)
             {
-                if (ptp.FileType == fileExtension)
+                if (pair.AssetType == assetType)
                 {
-                    if (fileNameWithoutExtension.Split('_').First() == ptp.Prefix)
+                    if (fileNameWithoutExtension.Split('_').First() == pair.Prefix)
                         return null;
-                    return $"{ptp.Prefix}_{fileNameWithoutExtension}.{fileExtension}";
+                    return $"{pair.Prefix}_{fileNameWithoutExtension}.{fileExtension}";
                 }
             }
 
-            if (TypePrefixMap.TryGetValue(assetType, out var prefix))
+            foreach (PrefixFileTypePair pair in FileTypePairs)
             {
-                if (fileNameWithoutExtension.Split('_').First() == prefix)
-                    return null;
-                return $"{prefix}_{fileNameWithoutExtension}.{fileExtension}";
+                if (pair.FileType == fileExtension)
+                {
+                    if (fileNameWithoutExtension.Split('_').First() == pair.Prefix)
+                        return null;
+                    return $"{pair.Prefix}_{fileNameWithoutExtension}.{fileExtension}";
+                }
             }
 
             LogErrorOnce($"Unknown file type: {fileExtension}");
-            LogErrorOnce(
-                $"Unknown asset type for file: {fileNameWithoutExtension}.{fileExtension}"
-            );
+            LogErrorOnce($"Unknown asset type for file: {fileNameWithoutExtension}.{fileExtension}");
+            LogErrorOnce($"Unknown .asset file type: {assetType}");
             return null;
         }
 
@@ -157,5 +152,31 @@ namespace akira
             }
         }
     }
+
+    #region Editor
+    struct PrefixAssetTypePair
+    {
+        public readonly Type AssetType;
+        public readonly string Prefix;
+
+        public PrefixAssetTypePair(Type assetType, string prefix)
+        {
+            AssetType = assetType;
+            Prefix = prefix;
+        }
+    }
+
+    struct PrefixFileTypePair
+    {
+        public readonly string FileType;
+        public readonly string Prefix;
+
+        public PrefixFileTypePair(string pFileType, string pPrefix)
+        {
+            FileType = pFileType;
+            Prefix = pPrefix;
+        }
+    }
+    #endregion
 }
 #endif
