@@ -14,34 +14,34 @@ namespace akira
 
         private static readonly PrefixFileTypePair[] FileTypePairs =
         {
-            new("mat", "M"),
             new("anim", "AC"),
-            new("fbx", "FBX"),
-            new("png", "SPR"),
             new("controller", "CTRL"),
+            new("fbx", "FBX"),
+            new("mat", "M"),
+            new("mp3", "SFX"),
+            new("ogg", "SFX"),
+            new("png", "SPR"),
             new("prefab", "P"),
+            new("scenetemplate", "SCENE"),
+            new("shader", "SHADER"),
             new("terrainlayer", "TL"),
             new("unity", "SCENE"),
-            new("mp3", "SFX"),
             new("wav", "SFX"),
-            new("ogg", "SFX"),
-            new("shader", "SHADER"),
-            new("scenetemplate", "SCENE"),
         };
 
         private static readonly PrefixAssetTypePair[] AssetTypePairs =
         {
-            new(typeof(Material), "M"),
             new(typeof(AnimationClip), "AC"),
-            new(typeof(GameObject), "FBX"),
-            new(typeof(Texture2D), "SPR"),
-            new(typeof(RuntimeAnimatorController), "CTRL"),
-            new(typeof(TerrainLayer), "TL"),
-            new(typeof(SceneAsset), "SCENE"),
             new(typeof(AudioClip), "SFX"),
-            new(typeof(Shader), "SHADER"),
+            new(typeof(GameObject), "FBX"),
+            new(typeof(Material), "M"),
+            new(typeof(RuntimeAnimatorController), "CTRL"),
+            new(typeof(SceneAsset), "SCENE"),
             new(typeof(ScriptableObject), "SO"),
+            new(typeof(Shader), "SHADER"),
             new(typeof(TerrainData), "TD"),
+            new(typeof(TerrainLayer), "TL"),
+            new(typeof(Texture2D), "SPR"),
         };
         #endregion
 
@@ -67,40 +67,38 @@ namespace akira
                     continue;
                 }
 
-                Type assetType = GetAssetType(assetPath);
+                var assetType = GetAssetType(assetPath);
                 if (assetType == null)
                 {
                     LogErrorOnce($"Failed to determine asset type for path: {assetPath}");
                     continue;
                 }
 
-                string[] splitFilePath = assetPath.Split('/');
-                string[] splitFileName = splitFilePath.Last().Split('.');
-                string fileNameWithoutExtension = splitFileName.First();
-                string fileExtension = splitFileName.Last();
+                var splitFilePath = assetPath.Split('/');
+                var splitFileName = splitFilePath.Last().Split('.');
+                var fileNameWithoutExtension = splitFileName.First();
+                var fileExtension = splitFileName.Last();
 
-                string newName = GetNewName(fileNameWithoutExtension, fileExtension, assetType);
+                var newName = GetNewName(fileNameWithoutExtension, fileExtension, assetType);
                 if (!string.IsNullOrEmpty(newName))
                 {
                     AssetDatabase.RenameAsset(assetPath, newName);
                     AssetDatabase.Refresh();
 
                     // Update the main object name to match the new filename
-                    string newAssetPath =
+                    var newAssetPath =
                         $"{string.Join("/", splitFilePath.Take(splitFilePath.Length - 1))}/{newName}";
-                    Object asset = AssetDatabase.LoadAssetAtPath<Object>(newAssetPath);
-                    if (asset != null)
-                    {
-                        asset.name = newName.Split('/').Last().Split('.').First();
-                        EditorUtility.SetDirty(asset);
-                    }
+                    var asset = AssetDatabase.LoadAssetAtPath<Object>(newAssetPath);
+                    if (asset == null) continue;
+                    asset.name = newName.Split('/').Last().Split('.').First();
+                    EditorUtility.SetDirty(asset);
                 }
             }
         }
 
         private static Type GetAssetType(string assetPath)
         {
-            Object asset = AssetDatabase.LoadAssetAtPath<Object>(assetPath);
+            var asset = AssetDatabase.LoadAssetAtPath<Object>(assetPath);
             if (asset != null)
             {
                 if (asset is ScriptableObject)
@@ -119,22 +117,14 @@ namespace akira
         {
             foreach (var pair in AssetTypePairs)
             {
-                if (pair.AssetType == assetType)
-                {
-                    if (fileNameWithoutExtension.Split('_').First() == pair.Prefix)
-                        return null;
-                    return $"{pair.Prefix}_{fileNameWithoutExtension}.{fileExtension}";
-                }
+                if (pair.AssetType != assetType) continue;
+                return fileNameWithoutExtension.Split('_').First() == pair.Prefix ? null : $"{pair.Prefix}_{fileNameWithoutExtension}.{fileExtension}";
             }
 
-            foreach (PrefixFileTypePair pair in FileTypePairs)
+            foreach (var pair in FileTypePairs)
             {
-                if (pair.FileType == fileExtension)
-                {
-                    if (fileNameWithoutExtension.Split('_').First() == pair.Prefix)
-                        return null;
-                    return $"{pair.Prefix}_{fileNameWithoutExtension}.{fileExtension}";
-                }
+                if (pair.FileType != fileExtension) continue;
+                return fileNameWithoutExtension.Split('_').First() == pair.Prefix ? null : $"{pair.Prefix}_{fileNameWithoutExtension}.{fileExtension}";
             }
 
             LogErrorOnce($"Unknown file type: {fileExtension}");
@@ -145,16 +135,15 @@ namespace akira
 
         private static void LogErrorOnce(string message)
         {
-            if (!LoggedErrors.Contains(message))
-            {
-                Debug.LogError(message);
-                LoggedErrors.Add(message);
-            }
+            if (LoggedErrors.Contains(message)) return;
+            Debug.LogError(message);
+            LoggedErrors.Add(message);
         }
     }
 
     #region Editor
-    struct PrefixAssetTypePair
+
+    internal struct PrefixAssetTypePair
     {
         public readonly Type AssetType;
         public readonly string Prefix;
@@ -166,7 +155,7 @@ namespace akira
         }
     }
 
-    struct PrefixFileTypePair
+    internal struct PrefixFileTypePair
     {
         public readonly string FileType;
         public readonly string Prefix;
