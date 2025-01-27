@@ -1,3 +1,10 @@
+## [1.3.9](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.8...v1.3.9) (2025-01-27)
+
+
+### Bug Fixes
+
+* ignore .cs files ([4a27678](https://github.com/AkiVonAkira/com.akira.tools/commit/4a276789495759ccc6b142bcbd3bfb47c799a982))
+
 ## [1.3.8](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.7...v1.3.8) (2025-01-27)
 
 
