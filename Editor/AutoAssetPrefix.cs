@@ -1,11 +1,10 @@
+#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
-# if UNITY_EDITOR
 using UnityEditor;
-# endif
 
 namespace akira
 {
@@ -55,6 +54,8 @@ namespace akira
             { typeof(TerrainData), "TD" },
         };
 
+        private static readonly HashSet<string> LoggedErrors = new();
+
         static void OnPostprocessAllAssets(
             string[] importedAssets,
             string[] deletedAssets,
@@ -66,6 +67,7 @@ namespace akira
             {
                 if (!assetPath.StartsWith("Assets/_Project"))
                 {
+                    LogErrorOnce($"Unknown asset type for path: {assetPath}");
                     continue;
                 }
 
@@ -107,6 +109,7 @@ namespace akira
                 }
                 return asset.GetType();
             }
+            LogErrorOnce($"Failed to load asset at path: {assetPath}");
             return null;
         }
 
@@ -124,6 +127,7 @@ namespace akira
                         return null;
                     return $"{ptp.Prefix}_{fileNameWithoutExtension}.{fileExtension}";
                 }
+                LogErrorOnce($"Unknown file type: {fileExtension}");
             }
 
             if (TypePrefixMap.TryGetValue(assetType, out var prefix))
@@ -132,7 +136,20 @@ namespace akira
                     return null;
                 return $"{prefix}_{fileNameWithoutExtension}.{fileExtension}";
             }
+            LogErrorOnce(
+                $"Unknown asset type for file: {fileNameWithoutExtension}.{fileExtension}"
+            );
             return null;
+        }
+
+        private static void LogErrorOnce(string message)
+        {
+            if (!LoggedErrors.Contains(message))
+            {
+                Debug.LogError(message);
+                LoggedErrors.Add(message);
+            }
         }
     }
 }
+#endif

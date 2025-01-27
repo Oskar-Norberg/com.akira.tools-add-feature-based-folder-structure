@@ -1,9 +1,8 @@
+#if UNITY_EDITOR
 using System.IO;
 using UnityEngine;
 using static UnityEditor.AssetDatabase;
-# if UNITY_EDITOR
 using UnityEditor;
-# endif
 
 namespace akira
 {
@@ -79,3 +78,4 @@ namespace akira
         }
     }
 }
+#endif
