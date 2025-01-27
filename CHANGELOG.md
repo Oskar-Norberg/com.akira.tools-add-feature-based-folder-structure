@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.4.1...v1.4.2) (2025-01-27)
+
+
+### Bug Fixes
+
+* replace obsolete find objects of type ([2f01b4f](https://github.com/AkiVonAkira/com.akira.tools/commit/2f01b4f5183beb5ccd53d9ecde78ab6a4f508a3a))
+
 ## [1.4.1](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.4.0...v1.4.1) (2025-01-27)
 
 
