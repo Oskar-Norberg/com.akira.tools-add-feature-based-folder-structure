@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.9...v1.4.0) (2025-01-27)
+
+
+### Bug Fixes
+
+* format code ([4c0683a](https://github.com/AkiVonAkira/com.akira.tools/commit/4c0683afb85f8556339eb1725ac04caef950ff04))
+* move log error out of loop ([0575b91](https://github.com/AkiVonAkira/com.akira.tools/commit/0575b9120a44b778605f68969db5f8169da8cd08))
+
+
+### Features
+
+* Find Hidden Objects ([488f42d](https://github.com/AkiVonAkira/com.akira.tools/commit/488f42d6502786428f5809a7b3356e7c26342713))
+
 ## [1.3.9](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.3.8...v1.3.9) (2025-01-27)
 
 
