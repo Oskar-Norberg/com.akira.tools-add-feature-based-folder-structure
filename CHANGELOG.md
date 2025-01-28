@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.4.2...v1.4.3) (2025-01-28)
+
+
+### Bug Fixes
+
+* auto asset prefix skips files not in Assets/_Project ([cc54b8a](https://github.com/AkiVonAkira/com.akira.tools/commit/cc54b8a4e4d505b308c4db533870222b3a746bb8))
+
 ## [1.4.2](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.4.1...v1.4.2) (2025-01-27)
 
 
