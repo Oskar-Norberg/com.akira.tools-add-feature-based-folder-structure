@@ -69,7 +69,6 @@ namespace akira
                 var assetType = GetAssetType(assetPath);
                 if (assetType == null)
                 {
-                    LogErrorOnce($"Failed to determine asset type for path: {assetPath}");
                     continue;
                 }
 
@@ -103,6 +102,12 @@ namespace akira
                 if (asset is ScriptableObject)
                 {
                     return typeof(ScriptableObject);
+                }
+
+                // Ignore DefaultAsset type
+                if (asset is DefaultAsset)
+                {
+                    return null;
                 }
 
                 return asset.GetType();
