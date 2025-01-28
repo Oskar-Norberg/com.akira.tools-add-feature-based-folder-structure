@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.4.3...v1.4.4) (2025-01-28)
+
+
+### Bug Fixes
+
+* ignore DefaultAsset type ([da368f2](https://github.com/AkiVonAkira/com.akira.tools/commit/da368f247a6ea2defa31f41a4deaa66c316d2ba6))
+
 ## [1.4.3](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.4.2...v1.4.3) (2025-01-28)
 
 
