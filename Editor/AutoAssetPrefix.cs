@@ -56,14 +56,13 @@ namespace akira
         {
             foreach (string assetPath in importedAssets)
             {
-                if (assetPath.EndsWith(".cs"))
+                if (!assetPath.StartsWith("Assets/_Project"))
                 {
                     continue;
                 }
 
-                if (!assetPath.StartsWith("Assets/_Project"))
+                if (assetPath.EndsWith(".cs"))
                 {
-                    LogErrorOnce($"Unknown asset type for path: {assetPath}");
                     continue;
                 }
 
