@@ -99,18 +99,18 @@ namespace akira
             var asset = AssetDatabase.LoadAssetAtPath<Object>(assetPath);
             if (asset != null)
             {
-                if (asset is ScriptableObject)
+                switch (asset)
                 {
-                    return typeof(ScriptableObject);
+                    case ScriptableObject:
+                        return typeof(ScriptableObject);
+                    case DefaultAsset:
+                    case MonoScript:
+                    case RenderTexture:
+                    case TextAsset:
+                        return null;
+                    default:
+                        return asset.GetType();
                 }
-
-                // Ignore DefaultAsset type
-                if (asset is DefaultAsset)
-                {
-                    return null;
-                }
-
-                return asset.GetType();
             }
 
             LogErrorOnce($"Failed to load asset at path: {assetPath}");
