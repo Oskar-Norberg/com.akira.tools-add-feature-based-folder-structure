@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.4.4...v1.4.5) (2025-01-29)
+
+
+### Bug Fixes
+
+* switch case ([4d975c4](https://github.com/AkiVonAkira/com.akira.tools/commit/4d975c42c22054531587adaace2a66b708d46c81))
+
 ## [1.4.4](https://github.com/AkiVonAkira/com.akira.tools/compare/v1.4.3...v1.4.4) (2025-01-28)
 
 
