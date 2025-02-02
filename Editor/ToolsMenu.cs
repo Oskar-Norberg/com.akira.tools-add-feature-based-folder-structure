@@ -1,5 +1,6 @@
 #if UNITY_EDITOR
 using System.IO;
+using ringo;
 using UnityEngine;
 using static UnityEditor.AssetDatabase;
 using UnityEditor;
@@ -53,6 +54,7 @@ namespace akira
                 "_Project",
 
                 "_Dev",
+
                 "_Scripts>Controllers",
                 "_Scripts>Editor",
                 "_Scripts>Interfaces",
@@ -65,18 +67,32 @@ namespace akira
                 "_Scripts>UI",
                 "_Scripts>Units",
                 "_Scripts>Utilities",
-                
-                "_Dev", 
-                "Player", 
-                "Characters", 
-                "Enemies", 
-                "Gameplay", 
-                "Audio",
+
+                "Gameplay>Triggers", 
+                "Gameplay>Interactibles", 
+                "Gameplay>Pickups", 
+                "Gameplay>Obstacles", 
+
+                "Audio>Music",
+                "Audio>SFX",
+
+                "VFX", 
+
+                "Characters",
                 "Levels", 
-                "Objects", 
-                "Sound", 
-                "UI"
+
+                "UI>Fonts",
+
+                "Resources"
             );
+            
+            WorldObjectFolders.Create(
+                "_Project", 
+                "Objects>Props>[PropName]", 
+                "Characters>[CharacterName]", 
+                "Enemy>[EnemyName]", 
+                "Player"
+                );
             
             Refresh();
         }
