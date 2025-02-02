@@ -8,8 +8,8 @@ namespace akira
 {
     public static class ToolsMenu
     {
-        [MenuItem("Tools/Setup/Create Default Folders")]
-        public static void CreateDefaultFolders()
+        [MenuItem("Tools/Setup/Folders/Type-Based")]
+        public static void CreateTypeBasedDefaultFolders()
         {
             Folders.CreateDirectories(
                 "_Project",
@@ -43,6 +43,41 @@ namespace akira
                 "Scenes>Temporary Scenes",
                 "Sprites>UI"
             );
+            Refresh();
+        }
+        
+        [MenuItem("Tools/Setup/Folders/Function-Based")]
+        public static void CreateFunctionBasedDefaultFolders()
+        {
+            Folders.CreateDirectories(
+                "_Project",
+
+                "_Dev",
+                "_Scripts>Controllers",
+                "_Scripts>Editor",
+                "_Scripts>Interfaces",
+                "_Scripts>Managers",
+                "_Scripts>Objects",
+                "_Scripts>Scriptables",
+                "_Scripts>Spawners",
+                "_Scripts>States",
+                "_Scripts>Systems",
+                "_Scripts>UI",
+                "_Scripts>Units",
+                "_Scripts>Utilities",
+                
+                "_Dev", 
+                "Player", 
+                "Characters", 
+                "Enemies", 
+                "Gameplay", 
+                "Audio",
+                "Levels", 
+                "Objects", 
+                "Sound", 
+                "UI"
+            );
+            
             Refresh();
         }
 
