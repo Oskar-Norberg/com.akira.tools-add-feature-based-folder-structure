@@ -7,7 +7,7 @@ namespace ringo
     {
         public static void Create(string root, params string[] dirs)
         {
-            string[] subFolders = { "Materials", "Models", "Prefabs", "Textures" };
+            string[] subFolders = { "Materials", "Models", "Prefabs", "Textures", "Animations" };
 
             foreach (var dir in dirs)
             {
