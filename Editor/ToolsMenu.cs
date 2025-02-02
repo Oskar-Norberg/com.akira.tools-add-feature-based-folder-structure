@@ -9,11 +9,13 @@ namespace akira
 {
     public static class ToolsMenu
     {
+        private const string RootFolder = "_Project";
+        
         [MenuItem("Tools/Setup/Folders/Type-Based")]
         public static void CreateTypeBasedDefaultFolders()
         {
             Folders.CreateDirectories(
-                "_Project",
+                RootFolder,
                 "_Scripts>Controllers",
                 "_Scripts>Editor",
                 "_Scripts>Interfaces",
@@ -51,7 +53,7 @@ namespace akira
         public static void CreateFunctionBasedDefaultFolders()
         {
             Folders.CreateDirectories(
-                "_Project",
+                RootFolder,
 
                 "_Dev",
 
@@ -87,7 +89,7 @@ namespace akira
             );
             
             WorldObjectFolders.Create(
-                "_Project", 
+                RootFolder, 
                 "Objects>Props>[PropName]", 
                 "Characters>[CharacterName]", 
                 "Enemy>[EnemyName]", 
