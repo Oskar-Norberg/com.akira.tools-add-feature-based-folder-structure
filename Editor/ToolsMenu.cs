@@ -55,7 +55,8 @@ namespace akira
             Folders.CreateDirectories(
                 RootFolder,
 
-                "_Dev",
+                "_Dev>FirstnameLastname",
+                "_Dev>_Lost&Found",
 
                 "_Scripts>Controllers",
                 "_Scripts>Editor",
@@ -78,9 +79,6 @@ namespace akira
                 "Audio>Music",
                 "Audio>SFX",
 
-                "VFX", 
-
-                "Characters",
                 "Levels", 
 
                 "UI>Fonts",
@@ -90,9 +88,11 @@ namespace akira
             
             WorldObjectFolders.Create(
                 RootFolder, 
+                "Objects>Architecture>[ArchitectureName]", 
                 "Objects>Props>[PropName]", 
                 "Characters>[CharacterName]", 
-                "Enemy>[EnemyName]", 
+                "Enemies>[EnemyName]", 
+                "VFX>[VFXName]",
                 "Player"
                 );
             
